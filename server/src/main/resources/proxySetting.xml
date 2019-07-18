@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Proxy>
+
+	<!--
+		#请求缓存数据策略
+		#-1 永远都不请求缓存数据
+		#0 根据用户请求头判断是否取缓存
+		#1 只从缓存取数据
+		#2 只从缓存取静态资源（如果缓存不在，尝试连接云服务）
+		#3 所有请求优先从缓存取，取不到便尝试从云服务实时取
+		get-data-cache=3
+
+		#缓存数据策略
+		# -1:永远不需要缓存;
+		# 0:根据用户请求头判断是否缓存;
+		# 1:所有数据都要缓存;
+		# 2:只缓存静态资源(图片、css、js等)
+		data-cache=1
+
+
+		#缓存回放策略
+		# -1:永远不需要回放;
+		# 0:根据用户请求头判断是否回放;
+		# 1:服务断了就回放;如果缓存策略为可以获取缓存，并且能够获取到缓存则不会存储回放数据
+		data-cache-playback=1
+	-->
+
+
+	<defaultSettings>
+		<port>8180</port>
+		<basePath>/</basePath>
+		<selfWebPath>/cs_page/</selfWebPath>
+	</defaultSettings>
+	
+	<ProxyServices>
+		<ProxyService>
+			<name>南海</name>
+			<proxyUrl>southsea/*</proxyUrl>
+			<healthUrl>http://192.168.100.83:7601/southsea/product/health</healthUrl>
+			<targetUrl>http://192.168.100.83:7601/southsea/product</targetUrl>
+			<tactics>
+				<get-data-cache>3</get-data-cache>
+				<data-cache>1</data-cache>
+				<data-cache-playback>1</data-cache-playback>
+			</tactics>
+		</ProxyService>
+		
+		<ProxyService>
+			<name>测试例子</name>
+			<proxyUrl>/demo/*</proxyUrl>
+			<healthUrl>http://192.168.100.88:7601/demo/health</healthUrl>
+			<targetUrl>http://192.168.100.88:7601/demo</targetUrl>
+			<tactics>
+				<get-data-cache>3</get-data-cache>
+				<data-cache>1</data-cache>
+				<data-cache-playback>1</data-cache-playback>
+			</tactics>
+		</ProxyService>
+
+		<ProxyService>
+			<name>百度首页</name>
+			<proxyUrl>/baidu/*</proxyUrl>
+			<healthUrl>https://www.baidu.com/health</healthUrl>
+			<targetUrl>https://www.baidu.com</targetUrl>
+			<tactics>
+				<get-data-cache>3</get-data-cache>
+				<data-cache>1</data-cache>
+				<data-cache-playback>1</data-cache-playback>
+			</tactics>
+		</ProxyService>
+
+
+		<ProxyService>
+			<name>STS前台</name>
+			<proxyUrl>/STS/*</proxyUrl>
+			<healthUrl>http://192.168.100.18:8090/STS/health.html</healthUrl>
+			<targetUrl>http://192.168.100.18:8090/STS</targetUrl>
+			<tactics>
+				<get-data-cache>3</get-data-cache>
+				<data-cache>1</data-cache>
+				<data-cache-playback>-1</data-cache-playback>
+			</tactics>
+		</ProxyService>
+
+		<ProxyService>
+			<name>STS后台</name>
+			<proxyUrl>/sts/*</proxyUrl>
+			<healthUrl>http://192.168.100.15:8001/sts/healthy/getHealthy</healthUrl>
+			<targetUrl>http://192.168.100.15:8001/sts</targetUrl>
+			<tactics>
+				<get-data-cache>3</get-data-cache>
+				<data-cache>1</data-cache>
+				<data-cache-playback>1</data-cache-playback>
+			</tactics>
+		</ProxyService>
+
+		<ProxyService>
+			<name>STS地图服务1</name>
+			<proxyUrl>/geo/*</proxyUrl>
+			<healthUrl>http://192.168.100.15:8001/sts/healthy/getHealthy</healthUrl>
+			<targetUrl>http://62.234.77.160:8080</targetUrl>
+			<tactics>
+				<get-data-cache>3</get-data-cache>
+				<data-cache>1</data-cache>
+				<data-cache-playback>-1</data-cache-playback>
+			</tactics>
+		</ProxyService>
+
+		<ProxyService>
+			<name>STS地图服务2</name>
+			<proxyUrl>/stsgeo/*</proxyUrl>
+			<healthUrl>http://192.168.100.15:8001/sts/healthy/getHealthy</healthUrl>
+			<targetUrl>'http://62.234.77.160:8090</targetUrl>
+			<tactics>
+				<get-data-cache>3</get-data-cache>
+				<data-cache>1</data-cache>
+				<data-cache-playback>-1</data-cache-playback>
+			</tactics>
+		</ProxyService>
+
+
+		<ProxyService>
+			<name>周报后台</name>
+			<proxyUrl>/weekly/*</proxyUrl>
+			<healthUrl>http://192.168.100.15:7600/weekly/health</healthUrl>
+			<targetUrl>http://192.168.100.15:7600/weekly</targetUrl>
+			<tactics>
+				<get-data-cache>3</get-data-cache>
+				<data-cache>1</data-cache>
+				<data-cache-playback>1</data-cache-playback>
+			</tactics>
+		</ProxyService>
+
+		<ProxyService>
+			<name>周报前台</name>
+			<proxyUrl>/weekreport/*</proxyUrl>
+			<healthUrl>http://192.168.100.18:8090/weekreport/health</healthUrl>
+			<targetUrl>http://192.168.100.18:8090/weekreport</targetUrl>
+			<tactics>
+				<get-data-cache>3</get-data-cache>
+				<data-cache>1</data-cache>
+				<data-cache-playback>-1</data-cache-playback>
+			</tactics>
+		</ProxyService>
+
+	</ProxyServices>
+	
+</Proxy>

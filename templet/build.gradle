@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+}
+
+group 'com.iscas'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'cglib', name: 'cglib', version: "${cglibVersion}"
+}

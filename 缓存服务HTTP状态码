@@ -1,0 +1,2 @@
+CACHE_SERVER_ERROR(650, "缓存服务内部错误", "Cache service internal error"),
+REQUEST_CACHED(621, "请求已经被缓存，当服务恢复后会回放此请求", "The request has been cached and will be played back when the service is restored");

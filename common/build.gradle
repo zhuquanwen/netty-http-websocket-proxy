@@ -1,0 +1,60 @@
+dependencies {
+    // https://mvnrepository.com/artifact/commons-codec/commons-codec
+    compile group: 'commons-codec', name: 'commons-codec'
+    // https://mvnrepository.com/artifact/org.ostermiller/utils
+    compile group: 'org.ostermiller', name: 'utils', version: "${ostermillerVersion}"
+
+    //commons-lang3
+    compile group: 'org.apache.commons', name: 'commons-lang3',version:'3.8.1'
+    // https://mvnrepository.com/artifact/dom4j/dom4j
+    compile group: 'dom4j', name: 'dom4j', version:'1.6.1'
+    // https://mvnrepository.com/artifact/org.apache.poi/poi
+    compile group: 'org.apache.poi', name: 'poi',version:'3.17'
+    // https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
+    compile group: 'org.apache.poi', name: 'poi-ooxml',version:'3.17'
+    // https://mvnrepository.com/artifact/org.apache.xmlbeans/xmlbeans
+//    compile group: 'org.apache.xmlbeans', name: 'xmlbeans'
+
+    // https://mvnrepository.com/artifact/commons-io/commons-io
+    compile group: 'commons-io', name: 'commons-io',version:"2.6"
+    // https://mvnrepository.com/artifact/stax/stax-api
+    compile group: 'stax', name: 'stax-api', version: "${staxVersion}"
+    // https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils
+    compile group: 'commons-beanutils', name: 'commons-beanutils',version:"1.9.3"
+
+    compile group: 'com.itextpdf', name: 'itext-asian', version: "${itextAsianVersion}"
+    compile group: 'com.lowagie', name: 'itext', version: "${itextVersion}"
+
+// https://mvnrepository.com/artifact/com.google.zxing/core
+    compile group: 'com.google.zxing', name: 'core', version: "${zxingCoreVersion}"
+
+    compile fileTree(dir: 'lib', include: '*.jar')
+
+    //jzip压缩
+    compile group: 'org.apache.ant', name: 'ant', version: "${apacheAntVersion}"
+
+    // ip to area
+    compile group: 'org.lionsoul', name: 'ip2region', version: "${ip2regionVersion}"
+
+    //hutool-all
+    compile "cn.hutool:hutool-all:${htoolVersion}"
+
+    compile "cglib:cglib:${cglibVersion}"
+
+    //https://mvnrepository.com/artifact/com.google.guava/guava
+    compile group: 'com.google.guava', name: 'guava', version:"20.0"
+
+    // https://mvnrepository.com/artifact/com.belerweb/pinyin4j
+    compile group: 'com.belerweb', name: 'pinyin4j', version: "${pingyin4jVersion}"
+
+    // https://mvnrepository.com/artifact/com.vdurmont/emoji-java
+    compile group: 'com.vdurmont', name: 'emoji-java', version: "${emojiJavaVersion}"
+
+    // https://mvnrepository.com/artifact/com.squareup.okio/okio
+    compile group: 'com.squareup.okio', name: 'okio', version: "${okioVersion}"
+
+    compile group: 'org.freemarker', name: 'freemarker', version: "${freemarkerVersion}"
+
+
+
+}

@@ -1,0 +1,52 @@
+buildscript {
+    repositories {
+        maven { url "${nexusUrl}" }
+        maven {url "${aliyunUrl}"}
+        maven { url "${springUrl}" }
+        jcenter()
+        mavenCentral()
+        maven {url "https://plugins.gradle.org/m2/"}
+        dependencies {
+            classpath "com.github.jengelman.gradle.plugins:shadow:1.2.4"
+        }
+    }
+}
+
+group 'com.iscas'
+version '1.0-SNAPSHOT'
+
+subprojects  {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'maven'
+    group = 'com.iscas'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = "${javaVersion}"
+    targetCompatibility = "${javaVersion}"
+
+    repositories {
+        maven { url "${nexusUrl}" }
+        maven {url "${aliyunUrl}"}
+        maven { url "${springUrl}" }
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {
+        compile 'org.projectlombok:lombok:1.18.4'
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
+
+
+    //这里一定得要。在多模块下，不然编译失败，因为不会把依赖模块给打包。
+    jar {
+        enabled = true
+    }
+
+
+}
+
+

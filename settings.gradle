@@ -1,0 +1,6 @@
+rootProject.name = 'cs'
+include 'server'
+include 'common'
+include 'common-redis'
+include 'templet'
+

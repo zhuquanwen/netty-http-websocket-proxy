@@ -1,0 +1,9 @@
+GET请求 默认为: http://ip:port/路径前缀/health
+
+
+返回结构：
+{
+  "health":1,   //int类型  -1 服务不可用(比如服务不想被访问时可以设置为这个)   1服务可用
+  "version":"1.0.1",  //字符串  配合cache-refresh使用
+  "cache_refresh":0   //int类型，标识是不是服务版本号升级后清除缓存  0 不清除 1清除
+}

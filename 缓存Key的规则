@@ -1,0 +1,1 @@
+res:[服务key]:[用户key]:[请求URL + param + 请求体 的MD5码]

@@ -1,0 +1,7 @@
+basicInfo,basicInfo,TEXT,redis基本参数,基本信息,无
+cpuInfo,cpuInfo,LineChart,CPU使用情况,CPU消耗,百分之
+memInfo,memInfo,PieChart,内存使用情况,内存总量、redis内存占用,MB
+QPS,QPS,LineChart,QPS情况,QPS情况,s/个
+client,client,LineChart,redis连接数,总连接数、当前连接数,个
+keyNum,keyNum,LineChart,Redis中key的实时数量,keys数量,个
+log,log,TEXT,redis的实时日志,redis的实时日志,无

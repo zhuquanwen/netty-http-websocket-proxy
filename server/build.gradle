@@ -1,0 +1,54 @@
+
+
+apply plugin: 'com.github.johnrengelman.shadow'
+
+dependencies {
+    compile project(":common-redis")
+    compile project(":common")
+    compile project(":templet")
+//    compile 'org.eclipse.jetty:jetty-server:9.4.11.v20180605'
+//    compile 'org.eclipse.jetty:jetty-servlet:9.4.11.v20180605'
+//    compile 'org.mitre.dsmiley.httpproxy:smiley-http-proxy-servlet:1.10'
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.3'
+
+    compile 'ch.qos.logback:logback-classic:1.2.3'
+    compile 'org.slf4j:slf4j-api:1.7.25'
+    compile "com.squareup.okhttp3:okhttp:3.10.0"
+    // https://mvnrepository.com/artifact/quartz/quartz
+    compile group: 'quartz', name: 'quartz', version: '1.5.2'
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version:'2.9.8'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version:'2.9.8'
+
+    compile group: 'org.jsoup', name: 'jsoup', version: "1.11.3"
+
+    // https://mvnrepository.com/artifact/com.yahoo.platform.yui/yuicompressor
+    compile group: 'com.yahoo.platform.yui', name: 'yuicompressor', version: '2.4.8'
+
+    compile 'org.apache.rocketmq:rocketmq-client:4.4.0'
+    compile 'org.apache.rocketmq:rocketmq-common:4.4.0'
+    compile 'org.apache.rocketmq:rocketmq-remoting:4.4.0'
+    compile 'org.apache.rocketmq:rocketmq-logging:4.4.0'
+    compile group: 'org.apache.rocketmq', name: 'rocketmq-tools', version: '4.4.0'
+
+    compile ("org.fusesource:sigar:1.6.4")
+    compile group: 'io.netty', name: 'netty-all', version:'4.1.33.Final'
+
+    // https://mvnrepository.com/artifact/org.java-websocket/Java-WebSocket
+    compile group: 'org.java-websocket', name: 'Java-WebSocket', version: '1.4.0'
+
+
+    compile fileTree(dir: 'lib', include: '*.jar')
+}
+
+shadowJar {
+    baseName = 'cache-server'
+    classifier = null
+    version = null
+    manifest {
+        attributes "Main-Class":"com.iscas.cache.server.App"
+    }
+}

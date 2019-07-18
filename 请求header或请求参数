@@ -1,0 +1,11 @@
+优先请求header，查不到，尝试去请求参数中获取
+
+文件下载 1：文件下载 其他或没有代表非文件下载请求
+cs-downfile=1
+
+websocket 1
+cs-ws=1
+
+
+请求类型（缓存服务返回错误或提示信息时根据不同类型返回不同的结构体，支持html、xml、json）
+不用特殊指定，如果不指定，返回html,如果是ajax请求需设置dataType为 json或xml，否则都按html返回
